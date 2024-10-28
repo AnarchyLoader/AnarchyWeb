@@ -1,0 +1,122 @@
+body {
+    font-family: "Readex Pro", sans-serif;
+    background: #272727;
+    color: #a7a7a7;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    background-color: #272727;
+    padding: 1rem;
+}
+
+.logo a {
+    display: block;
+    width: fit-content;
+}
+
+.logo img {
+    pointer-events: none;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272727;
+    padding: 1rem;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        position: static;
+    }
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.header-links a {
+    padding: 1rem;
+    color: #a7a7a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-links a:hover {
+    color: #d65151;
+    text-decoration: underline;
+}
+
+.client-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.7;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.client-box {
+    background-color: #272727;
+    border: 2px solid #d65151;
+    padding: 1.25rem;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.client-box p {
+    margin: 0;
+}
+
+.client-box p:nth-child(2) {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.1rem;
+    font-size: 0.9rem;
+}
+
+.client-box:hover {
+    background-color: #353535;
+}
+
+.client-box button {
+    background-color: #d65151;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.client-box button:hover {
+    background-color: #ff4848;
+    transform: scale(1.05);
+}
+
+.client-box button:active {
+    background-color: #aa3f3f;
+    transform: scale(0.95);
+}

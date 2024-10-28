@@ -1,0 +1,9 @@
+__pycache__/
+.vscode/
+AnarchyWeb/migrations/*
+AnarchyWeb/hacks/*
+AnarchyWeb/static/rest_framework/*
+AnarchyWeb/static/admin/*
+!AnarchyWeb/migrations/__init__.py
+.env
+*.sqlite3
