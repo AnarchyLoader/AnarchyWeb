@@ -6,7 +6,7 @@ from AnarchyWeb.models import Hack
 class HackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hack
-        fields = ['id', 'name', 'description', 'author', 'status', 'process', 'file', 'source']
+        fields = ['id', 'name', 'description', 'author', 'status', 'process', 'file', 'source', 'game']
 
 class HackViewSet(viewsets.ModelViewSet):
     queryset = Hack.objects.all()

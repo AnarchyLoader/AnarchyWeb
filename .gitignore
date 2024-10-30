@@ -4,6 +4,7 @@ AnarchyWeb/migrations/*
 AnarchyWeb/hacks/*
 AnarchyWeb/static/rest_framework/*
 AnarchyWeb/static/admin/*
+AnarchyWeb/static/unfold/*
 !AnarchyWeb/migrations/__init__.py
 .env
 *.sqlite3

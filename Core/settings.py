@@ -16,6 +16,7 @@ ALLOWED_HOSTS = ['anarchy.collapseloader.org', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://anarchy.collapseloader.org']
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
