@@ -6,6 +6,6 @@
 
 <h2 align=center>Features</h2>
 
-* [X] REST-API
-* [X] Admin panel
-* [X] Windows/Linux Support 
+-   [x] REST-API
+-   [x] Admin panel
+-   [x] Windows/Linux Support
