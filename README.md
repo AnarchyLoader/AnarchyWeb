@@ -1,22 +1,11 @@
-<div align="center">
-   <img src="https://github.com/user-attachments/assets/da62d58f-d664-4ce5-8932-db1e04d572c3" width="150"></img>
-   <h1>AnarchyWeb</h1>
-   AnarchyWeb is a Website with CS 1.6 cheats written on HTML/CSS/JS.
-</div>
+<p align=center><img src="https://github.com/dest4590/CollapseWeb/assets/80628386/3e61d078-397c-4428-927a-42e0a5bfa20f" width=100></p>
 
-## Showcase
-<div align="center">
-    <img src="https://github.com/user-attachments/assets/b1966ac0-834d-4344-95ee-a7d03c149abc" width=500>
-</div>
+<h1 align=center>AnarchyWeb</h1>
 
-## Try to use it!
+<h2 align=center>Our REST-API for connecting the <a href="https://github.com/dest4590/CollapseLoader">loader</a> directly to the server side</h2>
 
-Go to: https://anarchy.collapseloader.org
+<h2 align=center>Features</h2>
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
-
-## License
-
-This project is licensed under the GPL 3.0 License. See the [LICENSE](https://github.com/AnarchyLoader/AnarchyWeb/blob/main/LICENSE) file for details.
+* [X] REST-API
+* [X] Admin panel
+* [X] Windows/Linux Support 
