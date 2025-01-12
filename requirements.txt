@@ -1,4 +1,4 @@
 Django==5.1.4
-django-unfold==0.43.0
+django-unfold==0.44.0
 python-dotenv==1.0.1
 drf-redesign==0.4.0
