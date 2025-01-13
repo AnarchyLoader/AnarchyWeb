@@ -11,9 +11,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["api.anarchy.my", "127.0.0.1"]
+ALLOWED_HOSTS = ["api.anarchy.my", "127.0.0.1", "anarchy.ttfdk.lol"]
 
-CSRF_TRUSTED_ORIGINS = ["https://api.anarchy.my"]
+CSRF_TRUSTED_ORIGINS = ["https://api.anarchy.my", "https://anarchy.ttfdk.lol"]
 
 INSTALLED_APPS = [
     'unfold',
