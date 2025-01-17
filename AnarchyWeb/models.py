@@ -10,6 +10,7 @@ class Hack(models.Model):
     process = models.CharField(max_length=100, default='hl.exe')
     source = models.CharField(max_length=300, default='https://google.com')
     game = models.CharField(max_length=100, default='CS 1.6')
+    working = models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
