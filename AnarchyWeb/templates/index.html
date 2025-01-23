@@ -18,43 +18,37 @@
         <script src="{% static 'js/script.js' %}" defer></script>
         <meta
             name="description"
-            content="Website with best cheats for CS 1.6"
+            content="Website with hacks for games"
         />
-        <meta name="keywords" content="cs 1.6, cheats, hacks, anarchy" />
+        <meta name="keywords" content="cheats, hacks, anarchyloader" />
         <meta name="author" content="Anarchy Loader" />
-        <meta name="robots" content="index, follow" />
+        <meta name="darkreader-lock" />
     </head>
     <body>
         <header class="header-links">
-            <div class="logo">
-                <a href="/"
-                    ><img
-                        src="{% static 'photo/logo.png' %}"
-                        width="50"
-                        alt="Logo"
-                /></a>
-            </div>
-            <nav class="nav-links">
-                <a
-                    href="https://github.com/AnarchyLoader/AnarchyLoader"
-                    target="_blank"
-                    >Repo</a
-                >
-                <a href="https://discord.gg/YzwcDCsRe8">Discord</a>
-                <a href="/api/">API</a>
-                {% if is_admin %}
-                <a href="/admin">Admin</a>
-                {% endif %}
-            </nav>
+            <a
+                href="https://github.com/AnarchyLoader/AnarchyLoader"
+                target="_blank"
+                >Repo</a
+            >
+            <a href="https://discord.gg/YzwcDCsRe8">Discord</a>
+            <a href="/api/">API</a>
+            {% if is_admin %}
+            <a href="{% url 'admin:index' %}">Admin</a>
+            {% endif %}
         </header>
-        <main class="client-grid">
+        <main class="cards">
             {% for hack in hacks %}
-            <div class="client-box">
-                <p>{{ hack.name }}</p>
-                <p>{{ hack.author }}</p>
-                <a href="https://cdn.anarchy.my/{{ hack.file }}"
-                    ><button>Download</button></a
-                >
+            <div class="card">
+                <div>
+                    <p>{{ hack.name }}</p>
+                    <p class="author">by {{ hack.author }}</p>
+                    <a class="source" href="{{ hack.source }}">(source)</a>
+                </div>
+                
+                <p class="description">{{ hack.description }}</p>
+
+                <a href="https://cdn.anarchy.my/{{ hack.file }}" class="download">Download</a>
             </div>
             {% endfor %}
         </main>

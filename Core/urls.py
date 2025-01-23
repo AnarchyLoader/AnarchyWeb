@@ -8,10 +8,8 @@ from Core.settings import STATIC_ROOT
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-
-    path('api/', include(serializers.router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    
+    path("api/", include(serializers.router.urls)),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("", index),
-    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_ROOT})
+    re_path(r"^static/(?P<path>.*)$", serve, {"document_root": STATIC_ROOT}),
 ]

@@ -16,7 +16,7 @@ ALLOWED_HOSTS = ["api.anarchy.my", "127.0.0.1", "anarchy.ttfdk.lol"]
 CSRF_TRUSTED_ORIGINS = ["https://api.anarchy.my", "https://anarchy.ttfdk.lol"]
 
 INSTALLED_APPS = [
-    'unfold',
+    "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

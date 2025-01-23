@@ -1,122 +1,132 @@
+:root {
+    --fg: #e0def4;
+    --surface: #4c566a;
+    --bg: #2e3440;
+    --gb-1: #3b4252;
+}
+
 body {
+    background-color: var(--bg);
     font-family: 'Readex Pro', sans-serif;
-    background: #272727;
-    color: #a7a7a7;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    padding: 0;
+    text-align: center;
+    color: var(--fg);
 }
 
-.header-links {
-    display: flex;
-    align-items: center;
-    background-color: #272727;
-    padding: 1rem;
-}
-
-.logo a {
-    display: block;
-    width: fit-content;
-}
-
-.logo img {
-    pointer-events: none;
-}
-
-.header-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #272727;
-    padding: 1rem;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    left: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-    .logo {
-        position: static;
-    }
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-}
-
-.header-links a {
-    padding: 1rem;
-    color: #a7a7a7;
+a {
+    color: var(--fg);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.header-links a:hover {
-    color: #d65151;
+a:hover {
+    color: #88c0d0;
     text-decoration: underline;
 }
 
-.client-grid {
+.header-links {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex: 0.7;
-    gap: 1rem;
     padding: 1rem;
-    flex-wrap: wrap;
-    align-content: center;
+    background-color: var(--surface);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.client-box {
-    background-color: #272727;
-    border: 2px solid #d65151;
-    padding: 1.25rem;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 500;
-    text-align: center;
-    transition: background-color 0.3s ease;
+.header-links a {
+    padding: 1rem;
+}
+
+h1 {
+    color: var(--fg);
+    margin-bottom: 1rem;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 4rem;
+}
+
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100px;
-}
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
 
-.client-box p {
-    margin: 0;
-}
-
-.client-box p:nth-child(2) {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1.1rem;
-    font-size: 0.9rem;
-}
-
-.client-box:hover {
-    background-color: #353535;
-}
-
-.client-box button {
-    background-color: #d65151;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: var(--gb-1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--fg);
+    padding: 0.5rem;
+    width: 160px;
+    height: 160px;
+    opacity: 0;
+    transform: translateY(10px) scale(1);
     transition: all 0.3s ease;
 }
 
-.client-box button:hover {
-    background-color: #ff4848;
-    transform: scale(1.05);
+.card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
-.client-box button:active {
-    background-color: #aa3f3f;
-    transform: scale(0.95);
+.card.show:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+    width: 160px;
+    margin: 0;
+}
+
+.card .source {
+    text-decoration: underline;
+}
+
+.card .download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--surface);
+    height: 30px;
+    width: 145px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.card .download:hover {
+    background-color: #434c5e;
+    text-decoration: none;
+}
+
+.card .download:active {
+    transform: scale(0.9);
+}
+
+.card .author {
+    color: #697897;
+    overflow: inherit;
+    text-overflow: ellipsis;
+}
+
+/* TODO: fix description overflow */
+.card .description {
+    height: 30px;
+    font-size: 0.8rem;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.cut-text {
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
