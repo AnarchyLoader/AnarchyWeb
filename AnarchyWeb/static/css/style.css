@@ -64,10 +64,14 @@ h1 {
     color: var(--fg);
     padding: 0.5rem;
     width: 160px;
-    height: 160px;
+    height: auto;
     opacity: 0;
     transform: translateY(10px) scale(1);
     transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card.show {
@@ -86,7 +90,34 @@ h1 {
 }
 
 .card .source {
+    font-size: 0.8em;
     text-decoration: underline;
+}
+
+.disabled {
+    color: #697897;
+    cursor: not-allowed;
+}
+
+.card .author {
+    color: #697897;
+    overflow: inherit;
+    text-overflow: ellipsis;
+}
+
+.card .description {
+    font-size: 0.8em;
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.card:hover .description {
+    opacity: 1;
+    max-height: 10rem;
+    transform: translateY(0);
+    text-wrap: wrap;
 }
 
 .card .download {
@@ -110,23 +141,7 @@ h1 {
     transform: scale(0.9);
 }
 
-.card .author {
-    color: #697897;
-    overflow: inherit;
-    text-overflow: ellipsis;
-}
-
-/* TODO: fix description overflow */
-.card .description {
-    height: 30px;
-    font-size: 0.8rem;
-    word-break: break-word;
-    overflow: hidden;
-    text-overflow: clip;
-}
-
 .cut-text {
     overflow: hidden;
-    text-wrap: nowrap;
     text-overflow: ellipsis;
 }

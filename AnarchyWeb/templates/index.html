@@ -16,10 +16,7 @@
             href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap"
         />
         <script src="{% static 'js/script.js' %}" defer></script>
-        <meta
-            name="description"
-            content="Website with hacks for games"
-        />
+        <meta name="description" content="Website with hacks for games" />
         <meta name="keywords" content="cheats, hacks, anarchyloader" />
         <meta name="author" content="Anarchy Loader" />
         <meta name="darkreader-lock" />
@@ -37,18 +34,27 @@
             <a href="{% url 'admin:index' %}">Admin</a>
             {% endif %}
         </header>
+
         <main class="cards">
             {% for hack in hacks %}
             <div class="card">
                 <div>
                     <p>{{ hack.name }}</p>
                     <p class="author">by {{ hack.author }}</p>
+                    {% if hack.source == "N/A" %}
+                    <a class="source disabled" href="#disabled"
+                        >(source not available)</a
+                    >
+                    {% else %}
                     <a class="source" href="{{ hack.source }}">(source)</a>
+                    {% endif %}
                 </div>
-                
-                <p class="description">{{ hack.description }}</p>
 
-                <a href="https://cdn.anarchy.my/{{ hack.file }}" class="download">Download</a>
+                <p class="description cut-text" title="{{ hack.description }}">
+                    {{ hack.description }}
+                </p>
+
+                <a href="#" file="{{ hack.file }}" class="download">Download</a>
             </div>
             {% endfor %}
         </main>
