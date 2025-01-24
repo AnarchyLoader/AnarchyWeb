@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.source').forEach((element) => {
         let domain = element.href.trim();
         let domainMatch = domain.match(/https?:\/\/(www\.)?([^\/]+)/);
-        let parsedDomain = domainMatch ? domainMatch[2] : 'N/A';
+        let parsedDomain = domainMatch ? domainMatch[2] : 'n/a';
 
         if (!element.href.includes('#disabled')) {
             element.textContent = `(source, ${parsedDomain})`;
