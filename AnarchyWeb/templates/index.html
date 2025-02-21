@@ -1,62 +1,34 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Anarchy</title>
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="{% static 'photo/logo.png' %}"
-        />
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap"
-        />
-        <script src="{% static 'js/script.js' %}" defer></script>
-        <meta name="description" content="Website with hacks for games" />
-        <meta name="keywords" content="cheats, hacks, anarchyloader" />
-        <meta name="author" content="Anarchy Loader" />
-        <meta name="darkreader-lock" />
-    </head>
-    <body>
-        <header class="header-links">
-            <a
-                href="https://github.com/AnarchyLoader/AnarchyLoader"
-                target="_blank"
-                >Repo</a
-            >
-            <a href="https://discord.gg/YzwcDCsRe8">Discord</a>
-            <a href="/api/">API</a>
-            {% if is_admin %}
-            <a href="{% url 'admin:index' %}">Admin</a>
+
+{% block additionals %}
+<script src="{% static 'js/script.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+{% if hacks|length == 0 %}
+<h1>There are no hacks available.</h1>
+{% else %}
+{% for hack in hacks %}
+<div class="cards">
+    <div class="card">
+        <div>
+            <p>{{ hack.name }}</p>
+            <p class="author">by {{ hack.author }}</p>
+            {% if hack.source == "n/a" %}
+            <a class="source disabled" href="#disabled">(source not available)</a>
+            {% else %}
+            <a class="source" href="{{ hack.source }}">(source)</a>
             {% endif %}
-        </header>
+        </div>
 
-        <main class="cards">
-            {% for hack in hacks %}
-            <div class="card">
-                <div>
-                    <p>{{ hack.name }}</p>
-                    <p class="author">by {{ hack.author }}</p>
-                    {% if hack.source == "n/a" %}
-                    <a class="source disabled" href="#disabled"
-                        >(source not available)</a
-                    >
-                    {% else %}
-                    <a class="source" href="{{ hack.source }}">(source)</a>
-                    {% endif %}
-                </div>
+        <p class="description cut-text" title="{{ hack.description }}">
+            {{ hack.description }}
+        </p>
 
-                <p class="description cut-text" title="{{ hack.description }}">
-                    {{ hack.description }}
-                </p>
-
-                <a href="#" file="{{ hack.file }}" class="download">Download</a>
-            </div>
-            {% endfor %}
-        </main>
-    </body>
-</html>
+        <a href="#" file="{{ hack.file }}" class="download">Download</a>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

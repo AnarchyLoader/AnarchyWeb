@@ -19,6 +19,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function showReposLinks(show) {
+    let repos = document.querySelector('div.repos');
+    let repos_links = document.querySelectorAll('div.repos-links a');
+    let is_animation = repos.getAttribute("in_animation") === "true";
+
+    if (show && !is_animation) {
+        repos.style.height = "70px";
+        repos.setAttribute("in_animation", true);
+
+        setTimeout(() => {
+            repos_links.forEach((e, index) => {
+                setTimeout(() => {
+                    e.style.opacity = 1;
+                }, index * 100);
+            });
+            setTimeout(() => {
+                repos.setAttribute("in_animation", false);
+            }, 300 + repos_links.length * 100);
+        }, 300);
+    } else if (!show && !is_animation) {
+        repos.setAttribute("in_animation", true);
+
+        repos_links.forEach((e, index) => {
+            setTimeout(() => {
+                e.style.opacity = 0;
+            }, index * 100);
+        });
+
+        setTimeout(() => {
+            repos.style.height = "20px";
+            repos.setAttribute("in_animation", false);
+        }, 300 + repos_links.length * 100)
+    }
+}
+
 async function animateCards() {
     const cards = document.querySelectorAll('div.card');
 
