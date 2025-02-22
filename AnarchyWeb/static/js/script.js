@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function showReposLinks(show) {
     let repos = document.querySelector('div.repos');
     let repos_links = document.querySelectorAll('div.repos-links a');
-    let is_animation = repos.getAttribute("in_animation") === "true";
+    let is_animation = repos.getAttribute('in_animation') === 'true';
 
     if (show && !is_animation) {
-        repos.style.height = "70px";
-        repos.setAttribute("in_animation", true);
+        repos.style.height = '70px';
+        repos.setAttribute('in_animation', true);
 
         setTimeout(() => {
             repos_links.forEach((e, index) => {
@@ -35,11 +35,11 @@ function showReposLinks(show) {
                 }, index * 100);
             });
             setTimeout(() => {
-                repos.setAttribute("in_animation", false);
+                repos.setAttribute('in_animation', false);
             }, 300 + repos_links.length * 100);
         }, 300);
     } else if (!show && !is_animation) {
-        repos.setAttribute("in_animation", true);
+        repos.setAttribute('in_animation', true);
 
         repos_links.forEach((e, index) => {
             setTimeout(() => {
@@ -48,9 +48,9 @@ function showReposLinks(show) {
         });
 
         setTimeout(() => {
-            repos.style.height = "20px";
-            repos.setAttribute("in_animation", false);
-        }, 300 + repos_links.length * 100)
+            repos.style.height = '20px';
+            repos.setAttribute('in_animation', false);
+        }, 300 + repos_links.length * 100);
     }
 }
 

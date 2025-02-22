@@ -1,44 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}AnarchyWeb{% endblock %}</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}AnarchyWeb{% endblock %}</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{% static 'photo/logo.png' %}"
+        />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap"
+        />
+        <meta name="description" content="Website with hacks for games" />
+        <meta name="keywords" content="cheats, hacks, anarchyloader" />
+        <meta name="author" content="Anarchy Loader" />
+        <meta name="darkreader-lock" />
 
-    <link rel="icon" type="image/x-icon" href="{% static 'photo/logo.png' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" />
-    <meta name="description" content="Website with hacks for games" />
-    <meta name="keywords" content="cheats, hacks, anarchyloader" />
-    <meta name="author" content="Anarchy Loader" />
-    <meta name="darkreader-lock" />
+        {% block additionals %}{% endblock %}
+    </head>
 
-    {% block additionals %}{% endblock %}
-</head>
-
-<body>
-    <header class="header-links">
-        <div class="repos" onmouseenter="showReposLinks(true)" onmouseleave="showReposLinks(false)">Repos
-            <div class="repos-links">
-                <a href="https://github.com/AnarchyLoader/AnarchyLoader" target="_blank">Loader</a>
-                <a href="https://github.com/AnarchyLoader/AnarchyWeb" target="_blank">Web</a>
-                <a href="https://github.com/AnarchyLoader/AnarchyInjector" target="_blank">Injector</a>
+    <body>
+        <header class="header-links">
+            <div
+                class="repos"
+                onmouseenter="showReposLinks(true)"
+                onmouseleave="showReposLinks(false)"
+            >
+                Repos
+                <div class="repos-links">
+                    <a
+                        href="https://github.com/AnarchyLoader/AnarchyLoader"
+                        target="_blank"
+                        >Loader</a
+                    >
+                    <a
+                        href="https://github.com/AnarchyLoader/AnarchyWeb"
+                        target="_blank"
+                        >Web</a
+                    >
+                    <a
+                        href="https://github.com/AnarchyLoader/AnarchyInjector"
+                        target="_blank"
+                        >Injector</a
+                    >
+                </div>
             </div>
-        </div>
 
-        <a href="https://anarchy.my/discord">Discord</a>
-        <a href="/api/">API</a>
-        {% if is_admin %}
-        <a href="{% url 'admin:index' %}">Admin ({{ admin_username }})</a>
-        {% endif %}
-    </header>
+            <a href="https://anarchy.my/discord">Discord</a>
+            <a href="/api/">API</a>
+            {% if is_admin %}
+            <a href="{% url 'admin:index' %}">Admin ({{ admin_username }})</a>
+            {% endif %}
+        </header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-</body>
-
+        <main>{% block content %}{% endblock %}</main>
+    </body>
 </html>

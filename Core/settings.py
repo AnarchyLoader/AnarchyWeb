@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from colorama import Fore
 
 from dotenv import load_dotenv
 
@@ -9,7 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = True
+DEBUG = False
+
+if DEBUG:
+    print(f"{Fore.RED}WARNING: DEBUG MODE IS ENABLED{Fore.RESET}")
+    print(f"{Fore.RED}WARNING: DEBUG MODE IS ENABLED{Fore.RESET}")
+    print(f"{Fore.RED}WARNING: DEBUG MODE IS ENABLED{Fore.RESET}")
 
 ALLOWED_HOSTS = ["api.anarchy.my", "127.0.0.1", "anarchy.ttfdk.lol"]
 

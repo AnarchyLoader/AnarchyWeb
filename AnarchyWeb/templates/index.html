@@ -1,22 +1,18 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block additionals %}
+{% extends "base.html" %} {% load static %} {% block additionals %}
 <script src="{% static 'js/script.js' %}" defer></script>
-{% endblock %}
-
-{% block content %}
-{% if hacks|length == 0 %}
+{% endblock %} {% block content %} {% if hacks|length == 0 %}
 <h1>There are no hacks available.</h1>
 {% else %}
-{% for hack in hacks %}
 <div class="cards">
+    {% for hack in hacks %}
     <div class="card">
         <div>
             <p>{{ hack.name }}</p>
             <p class="author">by {{ hack.author }}</p>
             {% if hack.source == "n/a" %}
-            <a class="source disabled" href="#disabled">(source not available)</a>
+            <a class="source disabled" href="#disabled"
+                >(source not available)</a
+            >
             {% else %}
             <a class="source" href="{{ hack.source }}">(source)</a>
             {% endif %}
@@ -28,7 +24,7 @@
 
         <a href="#" file="{{ hack.file }}" class="download">Download</a>
     </div>
+
+    {% endfor %}
 </div>
-{% endfor %}
-{% endif %}
-{% endblock %}
+{% endif %} {% endblock %}
